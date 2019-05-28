@@ -213,26 +213,6 @@ void DrawWind(int x, int y, float angle, float windspeed) {
   gfx.setTextAlignment(TEXT_ALIGN_LEFT);
 }
 //#########################################################################################
-String WindDegToDirection(float winddirection) {
-  if (winddirection >= 348.75 || winddirection < 11.25)  return "N";
-  if (winddirection >=  11.25 && winddirection < 33.75)  return "NNE";
-  if (winddirection >=  33.75 && winddirection < 56.25)  return "NE";
-  if (winddirection >=  56.25 && winddirection < 78.75)  return "ENE";
-  if (winddirection >=  78.75 && winddirection < 101.25) return "E";
-  if (winddirection >= 101.25 && winddirection < 123.75) return "ESE";
-  if (winddirection >= 123.75 && winddirection < 146.25) return "SE";
-  if (winddirection >= 146.25 && winddirection < 168.75) return "SSE";
-  if (winddirection >= 168.75 && winddirection < 191.25) return "S";
-  if (winddirection >= 191.25 && winddirection < 213.75) return "SSW";
-  if (winddirection >= 213.75 && winddirection < 236.25) return "SW";
-  if (winddirection >= 236.25 && winddirection < 258.75) return "WSW";
-  if (winddirection >= 258.75 && winddirection < 281.25) return "W";
-  if (winddirection >= 281.25 && winddirection < 303.75) return "WNW";
-  if (winddirection >= 303.75 && winddirection < 326.25) return "NW";
-  if (winddirection >= 326.25 && winddirection < 348.75) return "NNW";
-  return "?";
-}
-//#########################################################################################
 void DrawPressureTrend(int x, int y, float pressure, String slope) {
   gfx.setTextAlignment(TEXT_ALIGN_CENTER);
   gfx.drawString(x, y, String(pressure,1) + (Units == "M" ? "mb" : "in"));

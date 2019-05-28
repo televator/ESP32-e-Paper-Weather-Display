@@ -151,4 +151,25 @@ bool obtain_wx_data(WiFiClient& client, const String& RequestType) {
   http.end();
   return true;
 }
+
+//#########################################################################################
+String WindDegToDirection(float winddirection) {
+  if (winddirection >= 348.75 || winddirection < 11.25)  return TXT_N;
+  if (winddirection >=  11.25 && winddirection < 33.75)  return TXT_NNE;
+  if (winddirection >=  33.75 && winddirection < 56.25)  return TXT_NE;
+  if (winddirection >=  56.25 && winddirection < 78.75)  return TXT_ENE;
+  if (winddirection >=  78.75 && winddirection < 101.25) return TXT_E;
+  if (winddirection >= 101.25 && winddirection < 123.75) return TXT_ESE;
+  if (winddirection >= 123.75 && winddirection < 146.25) return TXT_SE;
+  if (winddirection >= 146.25 && winddirection < 168.75) return TXT_SSE;
+  if (winddirection >= 168.75 && winddirection < 191.25) return TXT_S;
+  if (winddirection >= 191.25 && winddirection < 213.75) return TXT_SSW;
+  if (winddirection >= 213.75 && winddirection < 236.25) return TXT_SW;
+  if (winddirection >= 236.25 && winddirection < 258.75) return TXT_WSW;
+  if (winddirection >= 258.75 && winddirection < 281.25) return TXT_W;
+  if (winddirection >= 281.25 && winddirection < 303.75) return TXT_WNW;
+  if (winddirection >= 303.75 && winddirection < 326.25) return TXT_NW;
+  if (winddirection >= 326.25 && winddirection < 348.75) return TXT_NNW;
+  return "?";
+}
 #endif /* ifndef COMMON_H_ */
